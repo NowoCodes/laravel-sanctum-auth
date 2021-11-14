@@ -22,7 +22,7 @@ class BlogController extends BaseController
   {
     $input = $request->all();
     $validator = Validator::make($input, [
-      'title' => 'required',
+      'title' => 'required|unique:blogs,title',
       'description' => 'required'
     ]);
 
