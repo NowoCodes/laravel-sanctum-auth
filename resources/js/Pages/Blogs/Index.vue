@@ -33,7 +33,9 @@
                     </div>
                 </div>
 
-                <pagination :links="blogs.links" />
+                <div class="flex flex-col items-center px-5 py-5 bg-white border-t xs:flex-row xs:justify-between">
+                    <Pagination :links="blogs.links" />
+                </div>
             </div>
         </div>
     </BreezeAuthenticatedLayout>

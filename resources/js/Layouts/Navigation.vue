@@ -95,6 +95,13 @@
                             <Link :href="route('covid')" class="w-full">Covid</Link>
                         </li>
                     </ul>
+
+                    <ul aria-label="submenu"
+                        class="overflow-hidden p-2 mx-4 mt-2 space-y-2 text-sm font-medium text-white bg-gray-700 bg-opacity-50 rounded-md shadow-inner">
+                        <li class="px-2 py-1 transition-colors duration-150">
+                            <Link :href="route('show-questions')" class="w-full">Questions</Link>
+                        </li>
+                    </ul>
                 </div>
             </transition>
         </nav>

@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CovidController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,10 @@ Route::middleware('auth')->group(function () {
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
 
+    // APIs
     Route::get('covid', CovidController::class)->name('covid');
+    Route::get('questions', [QuestionController::class, 'index'])->name('show-questions');
+    Route::get('generate', [QuestionController::class, 'generate'])->name('generate-questions');
+
     Route::resource('blogs', BlogController::class);
 });
