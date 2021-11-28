@@ -4,7 +4,9 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CovidController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,32 +19,30 @@ use App\Http\Controllers\CovidController;
 |
 */
 
-Route::get('covid', CovidController::class);
-Route::get('blogs/{blog}', [BlogController::class, 'showFullBlogPost'])->name('blog.show-full-blog-post');
-Route::resource('blog', BlogController::class);
-
 Route::get('/', function () {
-  return Inertia::render('Welcome', [
-    'canLogin' => Route::has('login'),
-    'canRegister' => Route::has('register'),
-    'laravelVersion' => Application::VERSION,
-    'phpVersion' => PHP_VERSION,
-  ]);
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
 });
 
 Route::get('/dashboard', function () {
-  return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
 
 Route::middleware('auth')->group(function () {
-  Route::get('about', function () {
-    return Inertia::render('About');
-  })->name('about');
+    Route::get('about', function () {
+        return Inertia::render('About');
+    })->name('about');
 
-  Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+    Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
 
-  Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
-  Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+    Route::get('covid', CovidController::class)->name('covid');
+    Route::resource('blogs', BlogController::class);
 });
