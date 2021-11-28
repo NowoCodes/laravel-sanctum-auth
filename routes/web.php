@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CovidController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\RickAndMortyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::get('covid', CovidController::class)->name('covid');
     Route::get('questions', [QuestionController::class, 'index'])->name('show-questions');
     Route::get('generate', [QuestionController::class, 'generate'])->name('generate-questions');
+    Route::get('rickandmorty/{page?}', [RickAndMortyController::class, 'index'])->name('rick.morty');
 
     Route::resource('blogs', BlogController::class);
 });
