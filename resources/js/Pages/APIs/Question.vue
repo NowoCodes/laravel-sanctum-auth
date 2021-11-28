@@ -7,7 +7,7 @@
                 <div class="w-3/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
                     <h1 class="flex-grow sm:pr-16 text-4xl font-medium title-font">Show Questions</h1>
                     <Link :href="route('generate-questions')"
-                        class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0">
+                          class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0">
                         Generate Questions
                     </Link>
                 </div>
@@ -32,7 +32,7 @@
                         <Cell>{{ q.answer_a }}</Cell>
                         <Cell>{{ q.answer_b }}</Cell>
                         <Cell>{{ q.answer_c ?? '---' }}</Cell>
-                        <Cell>{{ q.answer_d ?? '---'}}</Cell>
+                        <Cell>{{ q.answer_d ?? '---' }}</Cell>
                     </Row>
                 </tbody>
             </Table>
