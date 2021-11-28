@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
+use Inertia\Response;
 use App\Services\RickAndMortyService;
 
 class RickAndMortyController extends Controller
 {
-    public function index(RickAndMortyService $rickAndMortyService, $page = 41)
+    public function __invoke(RickAndMortyService $rickAndMortyService, $page = 41): Response
     {
         $characters = $rickAndMortyService->getCharacter($page);
 
