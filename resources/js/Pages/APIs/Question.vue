@@ -16,16 +16,16 @@
 
         <div class="inline-block overflow-hidden min-w-full rounded-lg shadow">
             <Table>
-                <TableHead>
+                <template #head>
                     <Heading>S/N</Heading>
                     <Heading>Question</Heading>
                     <Heading>Answer A</Heading>
                     <Heading>Answer B</Heading>
                     <Heading>Answer C</Heading>
                     <Heading>Answer D</Heading>
-                </TableHead>
+                </template>
 
-                <tbody>
+                <template #body>
                     <Row v-for="q in questions.data" :key="q.id">
                         <Cell>{{ q.id }}</Cell>
                         <Cell>{{ q.question }}</Cell>
@@ -34,7 +34,7 @@
                         <Cell>{{ q.answer_c ?? '---' }}</Cell>
                         <Cell>{{ q.answer_d ?? '---' }}</Cell>
                     </Row>
-                </tbody>
+                </template>
             </Table>
 
             <div class="flex flex-col items-center px-5 py-5 bg-white border-t xs:flex-row xs:justify-between">
@@ -52,13 +52,11 @@ import Heading from "@/Components/Table/Heading";
 import Cell from "@/Components/Table/Cell";
 import Row from "@/Components/Table/Row";
 import Pagination from "@/Components/Pagination";
-import TableHead from "@/Components/Table/TableHead";
 import { Link } from '@inertiajs/inertia-vue3';
 
 export default {
     name: "Question",
     components: {
-        TableHead,
         Pagination,
         Row,
         Cell,

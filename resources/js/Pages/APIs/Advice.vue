@@ -27,17 +27,17 @@
 
         <div class="inline-block overflow-hidden min-w-full rounded-lg shadow mt-12">
             <Table>
-                <TableHead>
+                <template #head>
                     <Heading>S/N</Heading>
                     <Heading>Advice</Heading>
-                </TableHead>
+                </template>
 
-                <tbody>
+                <template #body>
                     <Row v-for="adv in all_advice.data" :key="adv.id">
                         <Cell>{{ adv.id }}</Cell>
                         <Cell>{{ adv.advice }}</Cell>
                     </Row>
-                </tbody>
+                </template>
             </Table>
 
             <div class="flex flex-col items-center px-5 py-5 bg-white border-t xs:flex-row xs:justify-between">
@@ -55,7 +55,6 @@ import Heading from "@/Components/Table/Heading";
 import Cell from "@/Components/Table/Cell";
 import Row from "@/Components/Table/Row";
 import Pagination from "@/Components/Pagination";
-import TableHead from "@/Components/Table/TableHead";
 import { Link } from '@inertiajs/inertia-vue3';
 
 export default {
@@ -65,7 +64,6 @@ export default {
         Table,
         Cell,
         Heading,
-        TableHead,
         Row,
         Head,
         Link,
