@@ -31,7 +31,7 @@
                 </a>
 
                 <div class="flex flex-wrap -mx-3 overflow-hidden">
-                    <div class="my-3 px-3 w-1/3 overflow-hidden">
+                    <div class="my-3 px-3 w-full md:w-1/3 overflow-hidden">
                         <a class="block p-6 bg-white hover:bg-gray-100 shadow-md border border-gray-200 rounded-lg max-w-sm"
                            href="#">
                             <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Confirmed Cases</h5>
@@ -39,7 +39,7 @@
                         </a>
                     </div>
 
-                    <div class="my-3 px-3 w-1/3 overflow-hidden">
+                    <div class="my-3 px-3 w-full md:w-1/3 overflow-hidden">
                         <a class="block p-6 bg-white hover:bg-gray-100 shadow-md border border-gray-200 rounded-lg max-w-sm"
                            href="#">
                             <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Recovered Cases</h5>
@@ -47,7 +47,7 @@
                         </a>
                     </div>
 
-                    <div class="my-3 px-3 w-1/3 overflow-hidden">
+                    <div class="my-3 px-3 w-full md:w-1/3 overflow-hidden">
                         <a class="block p-6 bg-white hover:bg-gray-100 shadow-md border border-gray-200 rounded-lg max-w-sm"
                            href="#">
                             <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Deaths</h5>
