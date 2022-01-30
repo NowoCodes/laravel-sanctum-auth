@@ -15,4 +15,9 @@ class Question extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    protected $casts = [
+        'correct_answers' => 'array',
+        'tags' => 'array'
+    ];
 }
