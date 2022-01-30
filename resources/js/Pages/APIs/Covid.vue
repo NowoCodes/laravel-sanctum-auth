@@ -7,11 +7,26 @@
         </template>
 
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="p-6 flex flex-col w-64">
+                <!--                <form @submit.prevent=getData>-->
+                <label for="country">Select Country</label>
+                <select v-model="country" id="country" class="px-3 rounded-xl shadow-lg outline"
+                        @change="getData('country')">
+                    <!--                    <option value="" selected>&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>-->
+                    <option value="nigeria">Nigeria</option>
+                    <option value="south-africa">South Africa</option>
+                    <option value="ghana">Ghana</option>
+                </select>
+
+                <!--                    <Button :loading="form.processing">Search</Button>-->
+                <!--                </form>-->
+            </div>
+
             <div class="p-6 border-b border-gray-200">
 
                 <a class="block p-6 bg-white hover:bg-gray-100 shadow-md border border-gray-200 rounded-lg max-w"
                    href="#">
-                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Covid Cases in Nigeria as at
+                    <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">Covid Cases in {{ country }} as at
                         {{ today }}</h5>
                 </a>
 
@@ -95,18 +110,35 @@
 <script>
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import { Head } from '@inertiajs/inertia-vue3';
+// import { useForm } from '@inertiajs/inertia-vue3'
+import Button from "@/Components/Button";
 
 export default {
     name: "Covid",
     components: {
+        Button,
         BreezeAuthenticatedLayout,
         Head,
     },
     props: {
+        country: '',
         today: Object,
         confirmedCovidCasesUntilToday: Object,
         recoveredCovidCasesUntilToday: Object,
         deadCovidCasesUntilToday: Object,
+    },
+    // setup() {
+    //     const form = useForm({
+    //         country: null,
+    //     })
+    //
+    //     return {form}
+    // },
+    methods: {
+        getData() {
+            // this.form.post(route('covid'));
+            this.$inertia.get(route('covid'), {country: this.country})
+        }
     }
 }
 </script>
