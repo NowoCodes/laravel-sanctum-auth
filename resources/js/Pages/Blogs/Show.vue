@@ -87,11 +87,11 @@
 
             <!--Subscribe-->
             <div class="container px-4">
-                <div class="font-sans bg-gradient-to-b from-green-100 to-gray-100 rounded-lg shadow-xl p-4 text-center">
+                <div
+                    class="font-sans text-white bg-gradient-to-b from-indigo-600 to-gray-100 rounded-lg shadow-xl p-4 text-center">
                     <h2 class="font-bold break-normal text-xl md:text-3xl">Subscribe to my Newsletter</h2>
-                    <h3 class="font-bold break-normal text-gray-600 text-sm md:text-base">Get the latest posts delivered
-                        right to
-                        your inbox</h3>
+                    <h3 class="font-bold break-normal text-sm md:text-base">Get the latest posts delivered right to your
+                        inbox</h3>
                     <div class="w-full text-center pt-4">
                         <form action="#">
                             <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">

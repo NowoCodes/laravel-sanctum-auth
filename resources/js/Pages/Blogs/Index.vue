@@ -16,7 +16,7 @@
                             <span class="mt-1 text-gray-500 text-sm">{{ blog.created_at }}</span>
                         </div>
                         <div class="md:flex-grow">
-                            <h2 class="text-2xl font-medium text-white title-font mb-2">{{ blog.title }}</h2>
+                            <h2 class="text-2xl font-bold text-black title-font mb-2">{{ blog.title }}</h2>
                             <p class="leading-relaxed">{{ blog.description }}.</p>
 
                             <Link :href="route('blogs.show', blog)"
