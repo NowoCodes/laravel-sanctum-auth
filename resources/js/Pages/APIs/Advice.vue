@@ -50,11 +50,11 @@
 <script>
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import { Head } from '@inertiajs/inertia-vue3';
-import Table from "@/Components/Table/Table";
-import Heading from "@/Components/Table/Heading";
-import Cell from "@/Components/Table/Cell";
-import Row from "@/Components/Table/Row";
-import Pagination from "@/Components/Pagination";
+import Table from "@/Components/Table/Table.vue";
+import Heading from "@/Components/Table/Heading.vue";
+import Cell from "@/Components/Table/Cell.vue";
+import Row from "@/Components/Table/Row.vue";
+import Pagination from "@/Components/Pagination.vue";
 import { Link } from '@inertiajs/inertia-vue3';
 
 export default {

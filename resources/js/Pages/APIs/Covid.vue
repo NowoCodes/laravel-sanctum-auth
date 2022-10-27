@@ -111,7 +111,7 @@
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import { Head } from '@inertiajs/inertia-vue3';
 // import { useForm } from '@inertiajs/inertia-vue3'
-import Button from "@/Components/Button";
+import Button from "@/Components/Button.vue";
 
 export default {
     name: "Covid",
